@@ -1,12 +1,14 @@
 workflows:
   ios-release:
     name: Build iOS app without signing
-    flutter:
-      channel: stable
-      target: lib/main.dart
+    platform: ios
+    source:
+      git:
+        url: https://github.com/R71il/flutter.git
+        branch: main
     build:
       ios:
-        ipa:
-          release: true
+        targets:
+          - lib/main.dart
     signing:
-      distribution: false  # تعطيل التوقيع
+      distribution: false
