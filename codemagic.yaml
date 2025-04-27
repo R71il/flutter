@@ -1,14 +1,14 @@
 workflows:
-  ios-release:
-    name: Build iOS app without signing
-    platform: IOS
-    source:
-      git:
-        url: https://github.com/R71il/flutter.git
-        branch: main
-    build:
-      ios:
-        targets:
-          - lib/main.dart
-    signing:
-      distribution: false
+  build_ios:
+    name: Build iOS IPA without code signing
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build iOS app
+        script: flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/iphoneos/*.app
+      - build/ios/iphoneos/*.ipa
