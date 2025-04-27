@@ -1,0 +1,13 @@
+workflows:
+  ios:
+    name: Build iOS app without signing
+    platform: ios
+    flutter:
+      channel: stable
+      target: lib/main.dart
+    build:
+      ios:
+        ipa:
+          release: true
+    signing:
+      distribution: false  # تعطيل التوقيع
