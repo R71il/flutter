@@ -1,7 +1,6 @@
 workflows:
-  ios:
+  ios-release:
     name: Build iOS app without signing
-    platform: ios
     flutter:
       channel: stable
       target: lib/main.dart
