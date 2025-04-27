@@ -1,7 +1,7 @@
 workflows:
   ios-release:
     name: Build iOS app without signing
-    platform: ios
+    platform: IOS
     source:
       git:
         url: https://github.com/R71il/flutter.git
